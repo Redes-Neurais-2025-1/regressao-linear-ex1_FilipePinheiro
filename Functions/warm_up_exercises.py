@@ -36,13 +36,13 @@ def warm_up_exercise3(x):
         Matriz de shape (m, 2), com a primeira coluna sendo 1s (bias) e a segunda os valores de x.
     """
     # obtem o número de exemplos
-    m = 
+    m = len(x)
     # Garante que x é um vetor coluna usando reshape. Use np.reshape
-    x = 
+    x = np.reshape(x, (m,1))
     # Adiciona uma coluna de 1s (bias) ao vetor x. Use np.ones para criar um vetor de 1s
-    bias = 
+    bias = np.ones((m, 1))
     # Concatena a coluna de 1s (bias) com o vetor x. Use np.hstack para concatenar horizontalmente e retorne
-    return 
+    return np.hstack((bias, x))
 
 def warm_up_exercise4(X, theta):
     """
@@ -58,7 +58,7 @@ def warm_up_exercise4(X, theta):
         Vetor de predições (m,)
     """
     # retorna o resultado da multiplicação matricial entre X e θ
-    return 
+    return np.dot(X, theta)
 
 def warm_up_exercise5(predictions, y):
     """
