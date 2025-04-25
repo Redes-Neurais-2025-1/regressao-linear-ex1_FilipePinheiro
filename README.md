@@ -177,11 +177,11 @@ Dúvidas, estou à disposição por e-mail ou em sala.
 ## Reconhecimentos e Direitos Autorais
 
 ```
-@autor:                [Seu Nome]  
-@contato:              [Seu Email]  
-@data última versão:   20/04/2025  
+@autor:                Filipe das Chagas Pinheiro
+@contato:              filipe.pinheiro@discente.ufma.br 
+@data última versão:   25/04/2025  
 @versão:               1.0  
-@outros repositórios:  [URLs opcionais]  
+@outros repositórios:  https://github.com/orgs/Redes-Neurais-2025-1/repositories
 @Agradecimentos:       Universidade Federal do Maranhão (UFMA),  
                        Prof. Dr. Thales Levi Azevedo Valente, thales.l.a.valente@gmail.com
                        https://www.linkedin.com/in/thalesvalente/
