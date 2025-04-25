@@ -1,16 +1,20 @@
 """
 @file plot_data.py
-@brief Plots the data points.
+@brief Plota os pontos de dados do conjunto de treinamento.
 """
 
 import matplotlib.pyplot as plt
 
+
 def plot_data(x, y):
     """
-    @brief Plot training data as red crosses.
+    @brief Plota os dados de treinamento como cruzes vermelhas.
 
-    @param x np.ndarray Independent variable (population)
-    @param y np.ndarray Dependent variable (profit)
+    @param x np.ndarray
+        Variável independente (população).
+
+    @param y np.ndarray
+        Variável dependente (lucro).
     """
     plt.figure()
     plt.plot(x, y, 'rx', markersize=5)

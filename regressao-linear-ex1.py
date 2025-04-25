@@ -67,10 +67,6 @@ def main():
     print('Executando o exercício de aquecimento (warm_up_exercise)...')
     print('Matriz identidade 5x5:')
     # Executa a função de aquecimento
-    # Essa função deve retornar uma matriz identidade 5x5
-    # representada como um array do NumPy.
-    # A função está definida em Functions/warm_up_exercise.py
-    # e foi importada no início deste arquivo.
     print('Executando os exercícios de aquecimento...')
 
     # Exercício 1: Matriz identidade 5x5
@@ -112,57 +108,29 @@ def main():
 
     print('Plotando os dados...')
     # Carrega os dados de treinamento a partir do arquivo ex1data1.txt
-    # O arquivo contém duas colunas: a primeira com a população da cidade
-    # (em dezenas de milhar) e a segunda com o lucro (em dezenas de mil dólares).
-    # Os dados são carregados usando a função np.loadtxt do NumPy.
-    # A função np.loadtxt lê os dados do arquivo e os armazena em um array NumPy.
     data = np.loadtxt('Data/ex1data1.txt', delimiter=',')
-    # Separa os dados em duas variáveis: x e y
-    # x contém a população da cidade (em dezenas de milhar)
-    # y contém o lucro (em dezenas de mil dólares)
-    # A primeira coluna de data é a população (x), a feature
-    # que será usada para prever o lucro.
     x = data[:, 0]
-    # A segunda coluna de data é o lucro (y), a label ou target
     y = data[:, 1]
-    # Agora, obtemos o número de exemplos de treinamento (m)
     m = len(x)
 
     # Plotagem dos dados
-    # Utiliza a função plot_data para exibir os pontos (x, y) em um gráfico 2D.
-    # A função está definida em Functions/plot_data.py
-    # e foi importada no início do arquivo.
     plot_data(x, y)
 
     input("Programa pausado. Pressione Enter para continuar...")
 
     # Preparação dos dados para o algoritmo de descida do gradiente
     # Adiciona uma coluna de 1s à matriz x para representar o termo de interceptação (bias).
-    # Isso é feito com np.column_stack, combinando uma coluna de 1s com os valores de x.
-    # A nova matriz x_aug terá duas colunas: a primeira com 1s e a segunda com os valores originais de x.
     x_aug = np.column_stack((np.ones((m, 1)), x))
 
     # Inicialização de theta como um vetor nulo (vetor de zeros)
-    # Inicializa o vetor de parâmetros theta como um vetor nulo com 2 elementos (theta[0] e theta[1]).
-    # O primeiro elemento representa o intercepto (bias) e o segundo o coeficiente angular (inclinação).
-    # Esse vetor será ajustado durante a execução do algoritmo de descida do gradiente.
     theta = [0, 0]
 
     # Parâmetros da descida do gradiente
-    # Define o número de iterações e a taxa de aprendizado (alpha)
-    # O número de iterações determina quantas vezes os parâmetros serão atualizados.
     iterations = 1500
-
-    # A taxa de aprendizado (alpha) controla o tamanho do passo dado em cada iteração do algoritmo de descida do gradiente.
-    # Um alpha muito grande pode fazer o algoritmo divergir, enquanto um muito pequeno pode torná-lo lento.
-    # Aqui, alpha é definido como 0.01, um valor comumente usado em problemas de regressão linear.
-    # Você pode experimentar outros valores para ver como o algoritmo se comporta.
     alpha = 0.01
 
     print('\nTestando a função de custo...')
     # Utiliza a função compute_cost para calcular o custo com os parâmetros iniciais (theta = [0, 0]).
-    # Essa função mede o quão bem os parâmetros atuais se ajustam aos dados de treinamento.
-    # Ela está definida em Functions/compute_cost.py e foi importada anteriormente.
     # Os parâmetros de entrada são a matriz x_aug (com 1s e valores de x), o vetor y (lucro) e o vetor theta (parâmetros).
     cost = compute_cost(x_aug, y, theta)
     print(f'Com theta = [0 ; 0]\nCusto calculado = {cost:.2f}')
@@ -188,10 +156,6 @@ def main():
     # theta = [8.5, 4.0] é o ponto de partida padrão. Foi estabelecido empiricamente ao olhar os gráficos.
     # Você pode experimentar outros valores para ver como o algoritmo se comporta.
     theta = np.array([8.5, 4.0])
-    # o vetor theta, a taxa de aprendizado (alpha) e o número de iterações.
-    # A função retorna os parâmetros ajustados (theta), o histórico de custos (J_history) e o histórico de theta (theta_history).
-    # O histórico de custos é usado para visualizar a convergência do algoritmo.
-    # O histórico de theta é usado para visualizar a trajetória do gradiente na superfície da função de custo.
     theta, J_history, theta_history = gradient_descent(x_aug, y, theta, alpha, iterations)
 
     print('Parâmetros theta encontrados pela descida do gradiente:')
